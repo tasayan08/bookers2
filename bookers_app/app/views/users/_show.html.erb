@@ -1,0 +1,33 @@
+<h1>User info</h1>
+   <table class="table">
+      <tr><%= attachment_image_tag user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg" %></tr>
+      <tr>
+       <th>name</th>
+       <th><%= user.name %></th>
+      </tr>
+      <tr>
+       <th>Introduction</th>
+       <th><%= user.introduction %></th>
+      </tr>
+     </table>
+
+      <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary btn-block fas fa-user-cog edit_user_4920' do %>
+      <% end %>
+
+
+<%= form_with model: book, local:true do |f| %>
+
+<h1>New book</h1>
+
+<div class='textarea'>
+ <p>Title</p>
+ <%= f.text_field :title %>
+
+ <p>Opinion</p>
+ <%= f.text_area :body %>
+
+ <div class="form-group">
+ <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+ </div>
+</div>
+<% end %>

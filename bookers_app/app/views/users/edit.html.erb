@@ -1,0 +1,21 @@
+<p id="notice"><%= flash[:profile_update] %></p>
+<% @user.errors.full_messages.each do |message| %>
+ <%= message %>error<br>
+<% end %>
+
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-mx-3">
+  <h1>User info</h1>
+   <%= form_with model: @user, local:true do |f| %>
+   <p>Name</p>
+   <%= f.text_field :name %>
+   <p>Image</p>
+   <%= f.attachment_field :profile_image %>
+   <p>introduction</p>
+   <%= f.text_area :introduction %>
+   <%= f.submit 'Update User' %>
+   <% end %>
+  </div>
+ </div>
+</div>

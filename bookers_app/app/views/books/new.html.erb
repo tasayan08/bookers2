@@ -1,0 +1,22 @@
+<p id="notice"></p>
+ <div class="container">
+   <div class="row">
+     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+
+<%= form_with model: @book, local:true do |f| %>
+
+<div class='textarea'>
+ <p>title</p>
+ <%= f.text_field :title %>
+
+ <p>body</p>
+ <%= f.text_area :body %>
+
+ <div>
+ <%= f.submit 'Create Book' %>
+ </div>
+</div>
+<% end %>
+
+</div>
+</div>
